@@ -1,6 +1,6 @@
 ﻿using static System.Math;
 
-namespace PrimeLibrary
+namespace App
 {
     public class PrimeService
     {

@@ -1,5 +1,5 @@
 using NUnit.Framework;
-using PrimeLibrary;
+using App;
 
 namespace Tests
 {
