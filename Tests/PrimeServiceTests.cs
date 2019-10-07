@@ -3,7 +3,6 @@ using App;
 
 namespace Tests
 {
-    [TestFixture]
     public class PrimeServiceTests
     {
         PrimeService primeService;
