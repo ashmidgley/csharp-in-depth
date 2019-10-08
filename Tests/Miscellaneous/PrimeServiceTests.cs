@@ -1,9 +1,8 @@
 using NUnit.Framework;
-using PrimeLibrary;
+using App;
 
 namespace Tests
 {
-    [TestFixture]
     public class PrimeServiceTests
     {
         PrimeService primeService;
