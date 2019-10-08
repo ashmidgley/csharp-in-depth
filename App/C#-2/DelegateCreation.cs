@@ -2,12 +2,11 @@ using System;
 
 namespace App
 {
+    // The purpose of delegates is to encapsulate a piece of code so that it can be passed around and executed as necessary.
+    // NOTE: C# 2 didn't introduce delegate creation. It was just made easier to use them for purposes other 
+    // than event handling and starting threads.
     public static class DelegateCreation
     {
-        // The purpose of delegates is to encapsulate a piece of code so that it can be passed around and executed as necessary.
-        // NOTE: C# 2 didn't introduce delegate creation. It was just made easier to use them for purposes other 
-        // than event handling and starting threads.
-
         public delegate void MyDelegate(string message);
 
         public static void ExampleUsage()
