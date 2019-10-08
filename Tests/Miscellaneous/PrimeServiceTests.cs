@@ -5,13 +5,7 @@ namespace Tests
 {
     public class PrimeServiceTests
     {
-        PrimeService primeService;
-
-        [SetUp]
-        public void Setup()
-        {
-            this.primeService = new PrimeService();
-        }
+        PrimeService primeService = new PrimeService();
 
         [TestCase(-1)]
         [TestCase(0)]
