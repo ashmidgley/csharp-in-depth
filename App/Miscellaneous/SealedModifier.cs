@@ -27,9 +27,7 @@ namespace App
     {
         public override sealed int Id 
         { 
-            get {
-                return 5;
-            }
+            get => 5;
         }
         
         public sealed override void MethodOne() {
