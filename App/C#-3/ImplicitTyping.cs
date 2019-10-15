@@ -4,7 +4,7 @@ namespace App
 {
     public static class ImplicitTyping
     {
-        public static void ExampleUsage()
+        public static void Usage()
         {
             // Local variables
             Dictionary<string, List<decimal>> mappingOld = new Dictionary<string, List<decimal>>();

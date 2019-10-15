@@ -4,7 +4,7 @@ namespace App
     // The various parts are combined by the compiler and act as if they were all declared together.
     partial class PartialTypes
     {
-        public static void ExampleUsage()
+        public static void Usage()
         {
             MethodInOtherClass();
         }

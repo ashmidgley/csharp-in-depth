@@ -9,7 +9,7 @@ namespace App
             public int ProductId;
         }
 
-        public static void ExampleUsage()
+        public static void Usage()
         {
             var player = new
             {

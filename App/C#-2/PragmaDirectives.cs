@@ -5,7 +5,7 @@ namespace App
     // Pragma directives give extra info to the compiler.
     public static class PragmaDirectives
     {
-        public static void ExampleUsage()
+        public static void Usage()
         {
             // CS0219 is the warning for unused variables.
             #pragma warning disable CS0219

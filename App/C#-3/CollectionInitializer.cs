@@ -4,7 +4,7 @@ namespace App
 {
     public static class CollectionInitializer
     {
-        public static void ExampleUsage()
+        public static void Usage()
         {
             List<string> collectionOld = new List<string>();
             collectionOld.Add("Maggie");
