@@ -8,7 +8,7 @@ namespace Tests
         [Test]
         public void DefaultValues()
         {
-            var result = CallerInformationAttributes.ExampleUsage();
+            var result = CallerInformationAttributes.Usage();
             Assert.IsTrue(result.file.Equals("/home/ash/dev/miscellaneous/Tests/C#-5/CallerInformationAttributesTests.cs"), "File path received does not match expected result.");
             Assert.IsTrue(result.line == 11, "Line number received does not match expected result.");
             Assert.IsTrue(result.member.Equals("DefaultValues"), "Member received does not match expected result.");
@@ -18,7 +18,7 @@ namespace Tests
         public void ExplicitValueForFile()
         {
             string dummyFileName = "EatMyShorts.cs";
-            var result = CallerInformationAttributes.ExampleUsage(file: dummyFileName);
+            var result = CallerInformationAttributes.Usage(file: dummyFileName);
             Assert.IsTrue(result.file.Equals(dummyFileName), "File path received does not match expected result.");
             Assert.IsTrue(result.line == 21, "Line number received does not match expected result.");
             Assert.IsTrue(result.member.Equals("ExplicitValueForFile"), "Member received does not match expected result.");

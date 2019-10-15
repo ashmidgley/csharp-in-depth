@@ -5,7 +5,7 @@ namespace App
 {
     public static class CapturingVariablesInForeach
     {
-        public static void ExampleUsage()
+        public static void Usage()
         {
             /*  Prior to C# 5 this would print z 3 times rather than x y z. Rather than the name variable being captured as part of 
                 the delegate, it would just use the CURRENT value of the variable name when the delgate is called (z).

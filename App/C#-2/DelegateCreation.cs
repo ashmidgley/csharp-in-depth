@@ -9,7 +9,7 @@ namespace App
     {
         public delegate void MyDelegate(string message);
 
-        public static void ExampleUsage()
+        public static void Usage()
         {
             // Old usage.
             EventHandler oldHandler = new EventHandler(HandleButtonClick);

@@ -7,7 +7,7 @@ namespace App
             public int ProductId;
         }
 
-        public static void ExampleUsage()
+        public static void Usage()
         {
             Order orderOld = new Order();
             orderOld.CustomerId = 1;
