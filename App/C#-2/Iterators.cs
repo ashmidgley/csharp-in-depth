@@ -3,17 +3,14 @@ using System.Collections.Generic;
 
 namespace App 
 {
-    // Iterators execute lazily, meaning the code to get a value is executed only when you need the value.
     public static class Iterators
     {
         public static IEnumerable<int> SimpleIterator()
         {
-            yield return 1000;
-            for(int i = 1; i <= 10; i++)
+            for(int i = 1; i <= 5; i++)
             {
                 yield return i;
             }
-            yield return 2000;
         }
 
         public static void PrintSimpleIterator()
@@ -24,8 +21,6 @@ namespace App
             }
         }
 
-        // You could implement this by storing the values in a list but this could become problematic
-        // as the value gets bigger.
         public static IEnumerable<int> Fibonacci()
         {
             int current = 0;
@@ -39,11 +34,50 @@ namespace App
             }
         }
 
-        public static void PrintFibonnaciUpToValue(int candidate)
+        public static IEnumerable<int> FibonacciIterator(double candidate)
         {
-            foreach(int value in Fibonacci()) {
+            int current = 0;
+            int next = 1;
+            while(current < candidate)
+            {
+                yield return current;
+                int oldCurrent = current;
+                current = next;
+                next = oldCurrent += next;
+            }
+        }
+
+        public static List<int> FibonacciList(double candidate)
+        {
+            List<int> numbers = new List<int>();
+            int current = 0;
+            int next = 1;
+            while(current < candidate)
+            {
+                numbers.Add(current);
+                int oldCurrent = current;
+                current = next;
+                next = oldCurrent += next;
+            }
+            return numbers;
+        }
+
+        public static void PrintFibonnaciUpToValue(double candidate)
+        {
+            foreach(int value in Fibonacci()) 
+            {
                 if(value > candidate)
+                {
                     break;
+                }
+                Console.WriteLine(value);
+            }
+        }
+
+        public static void PrintFibonnaciListUpToValue(double candidate)
+        {
+            foreach(int value in FibonacciList(candidate)) 
+            {
                 Console.WriteLine(value);
             }
         }
