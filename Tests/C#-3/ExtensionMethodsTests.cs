@@ -1,20 +1,16 @@
 using NUnit.Framework;
 using App;
-using System;
-using System.Linq;
 
 namespace Tests
 {
     public class ExtensionMethodsTests
     {
-        string[] words = { "keys", "coat", "laptop", "bottle" };
-
-        [Test]
-        public void QueryResultsMatch()
+        [TestCase(new object[]{ "keys", "coat", "laptop", "bottle" })]
+        public void QueryResultsMatch(params string[] input)
         {
-            var queryOld = ExtensionMethods.QueryWithoutExtensionMethods(this.words);
-            var queryNew = ExtensionMethods.QueryWithExtensionMethods(this.words);
-            Assert.IsTrue(queryOld.SequenceEqual(queryNew), "Query results should match.");
+            var queryOld = ExtensionMethods.QueryWithoutExtensionMethods(input);
+            var queryNew = ExtensionMethods.QueryWithExtensionMethods(input);
+            Assert.AreEqual(queryOld, queryNew, "Query results should match.");
         }
     }
 }

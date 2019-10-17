@@ -10,8 +10,8 @@ namespace Tests
         {
             Deconstruction test = new Deconstruction(x, y);
             var (a, b) = test;
-            Assert.IsTrue(a == x, "Value a does not match test value x.");
-            Assert.IsTrue(b == y, "Value b does not match test value y.");
+            Assert.AreEqual(a, x, "Value a does not match test value x.");
+            Assert.AreEqual(b, y, "Value b does not match test value y.");
         }
     }
 }

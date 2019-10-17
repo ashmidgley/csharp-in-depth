@@ -1,19 +1,16 @@
 using NUnit.Framework;
 using App;
-using System.Linq;
 
 namespace Tests
 {
     public class QueryExpressionsTests
     {
-        string[] words = { "keys", "coat", "laptop", "bottle" };
-
-        [Test]
-        public void QueryResultsMatch()
+        [TestCase(new object[] { "keys", "coat", "laptop", "bottle" })]
+        public void QueryResultsMatch(params string[] input)
         {
-            var methodChainingQuery = ExtensionMethods.QueryWithoutExtensionMethods(this.words);
-            var queryExpressionQuery = QueryExpressions.CreateQuery(this.words);
-            Assert.IsTrue(methodChainingQuery.SequenceEqual(queryExpressionQuery), "Query results should match.");
+            var methodChainingQuery = ExtensionMethods.QueryWithoutExtensionMethods(input);
+            var queryExpressionQuery = QueryExpressions.CreateQuery(input);
+            Assert.AreEqual(methodChainingQuery, queryExpressionQuery, "Query results should match.");
         }
     }
 }
