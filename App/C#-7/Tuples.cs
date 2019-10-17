@@ -38,6 +38,11 @@ namespace App
             var tuplino = ValueTuple.Create(1, "Test");
             Console.WriteLine(tuplino.Item1);
             Console.WriteLine(tuplino.Item2);
+
+            // Discards _. Used for desconstruction.
+            var tup = (1, 2, 3, 4);
+            var (x, y, _, _) = tup;
+            Console.WriteLine(tup);
         }
 
         public static (int min, int max) MinMax(int[] source)

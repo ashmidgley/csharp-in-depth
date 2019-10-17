@@ -9,9 +9,9 @@ namespace Tests
         public void DefaultValues()
         {
             var result = CallerInformationAttributes.Usage();
-            Assert.IsTrue(result.file.Equals("/home/ash/dev/miscellaneous/Tests/C#-5/CallerInformationAttributesTests.cs"), "File path received does not match expected result.");
-            Assert.IsTrue(result.line == 11, "Line number received does not match expected result.");
-            Assert.IsTrue(result.member.Equals("DefaultValues"), "Member received does not match expected result.");
+            Assert.AreEqual(result.file, "/home/ash/dev/miscellaneous/Tests/C#-5/CallerInformationAttributesTests.cs", "File path received does not match expected result.");
+            Assert.AreEqual(result.line, 11, "Line number received does not match expected result.");
+            Assert.AreEqual(result.member, "DefaultValues", "Member received does not match expected result.");
         }
 
         [Test]
@@ -19,9 +19,9 @@ namespace Tests
         {
             string dummyFileName = "EatMyShorts.cs";
             var result = CallerInformationAttributes.Usage(file: dummyFileName);
-            Assert.IsTrue(result.file.Equals(dummyFileName), "File path received does not match expected result.");
-            Assert.IsTrue(result.line == 21, "Line number received does not match expected result.");
-            Assert.IsTrue(result.member.Equals("ExplicitValueForFile"), "Member received does not match expected result.");
+            Assert.AreEqual(result.file, dummyFileName, "File path received does not match expected result.");
+            Assert.AreEqual(result.line, 21, "Line number received does not match expected result.");
+            Assert.AreEqual(result.member, "ExplicitValueForFile", "Member received does not match expected result.");
         }
     }
 }

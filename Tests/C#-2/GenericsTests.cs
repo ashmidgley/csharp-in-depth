@@ -6,17 +6,15 @@ namespace Tests
     public class GenericsTests
     {
         [Test]
-        public void OldIntegerCollectionMatchesNewImplementation()
+        public void TestGenericsIntegerImplementations()
         {
-            bool result = Generics.CollectionsMatch(Generics.GenerateNumbersOld(), Generics.GenerateNumbersNew());
-            Assert.IsTrue(result, "Integer collections should match.");
+            Assert.AreEqual(Generics.GenerateNumbersOld(), Generics.GenerateNumbersNew(), "Integer collections should match.");
         }
 
         [Test]
-        public void OldStringCollectionMatchesNewImplementation()
+        public void TestGenericsStringImplementations()
         {
-            bool result = Generics.CollectionsMatch(Generics.GenerateNamesOld(), Generics.GenerateNamesNew());
-            Assert.IsTrue(result, "String collections should match.");
+            Assert.AreEqual(Generics.GenerateNamesOld(), Generics.GenerateNamesNew(), "String collections should match.");
         }
     }
 }

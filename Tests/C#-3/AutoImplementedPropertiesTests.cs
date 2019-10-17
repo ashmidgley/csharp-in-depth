@@ -7,12 +7,12 @@ namespace Tests
     {
         AutoImplementedProperties autoProps = new AutoImplementedProperties();
 
-        [Test]
-        public void PropsShouldMatch()
+        [TestCase("Bart")]
+        public void PropsShouldMatch(string input)
         {
-            autoProps.NameOld = "Bart";
-            autoProps.NameNew = "Bart";
-            Assert.IsTrue(autoProps.NameOld.Equals(autoProps.NameNew), "Properties should match.");
+            autoProps.NameOld = input;
+            autoProps.NameNew = input;
+            Assert.AreEqual(autoProps.NameOld, autoProps.NameNew, "Properties should match.");
         }
     }
 }
