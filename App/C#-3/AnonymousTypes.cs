@@ -17,22 +17,17 @@ namespace App
                 Score = 420
             };
 
-            Console.WriteLine($"Username = {player.Username}, score = {player.Score}.");
+            Console.WriteLine(player.Username.Substring(0, 4));
+            Console.WriteLine(player.Score + 5);
 
             // Projection intializer
-            var order = new Order 
-            {
-                CustomerId = 1,
-                ProductId = 1
-            };
-
             var flattenedItem = new
             {
-                order.CustomerId, // Variable names are infered
-                order.ProductId
+                player.Username, // Variable names are infered
+                player.Score
             };
 
-            Console.WriteLine($"Flattened item: CustomerId = {flattenedItem.CustomerId}, ProductId = {flattenedItem.ProductId}");
+            Console.WriteLine($"Flattened item: Username = {flattenedItem.Username}, Score = {flattenedItem.Score}");
         }
     }
 }
