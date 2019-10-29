@@ -23,6 +23,24 @@ namespace App
             PrintQuery(query);
         }
 
+        public static void OrderBy()
+        {
+            var ascending = words
+                .OrderBy(word => word);
+            Console.WriteLine("Ascending");
+            PrintQuery(ascending);
+
+            var descending = words
+                .OrderByDescending(word => word);
+            Console.WriteLine("Descending");
+            PrintQuery(descending);
+            
+            var firstLetter = words
+                .OrderBy(word => word[0]);
+            Console.WriteLine("First letter");
+            PrintQuery(firstLetter);
+        }
+
         static void PrintQuery(IEnumerable query)
         {
             StringBuilder stringBuilder = new StringBuilder();
