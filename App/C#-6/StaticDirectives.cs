@@ -8,8 +8,9 @@ namespace App
     public static class StaticDirectives
     {
         public static void Usage() {
-            Console.WriteLine(Sqrt(144));
-            
+            var answer = Sqrt(144) + Round(255.546, 2) - PI * Ceiling(4.7);
+            Console.WriteLine(answer);
+
             var statusCode = OK;
             switch(statusCode)
             {

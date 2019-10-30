@@ -13,11 +13,18 @@ namespace App
             Console.WriteLine(string.Format("Price: {0,9:C}", price));
             Console.WriteLine(string.Format("Tip:   {0,9:C}", tip));
             Console.WriteLine(string.Format("Total: {0,9:C}", price + tip));
+
+            string project = "Mayhem";
+            string rule = "don't ask any questions";
+            string result = string.Format("The first rule of Project {0} is {1}.", project, rule);
+            Console.WriteLine(result);
             
             // Interpolated string
             Console.WriteLine($"Price: {price,9:C}");
             Console.WriteLine($"Tip:   {tip,9:C}");
             Console.WriteLine($"Total: {price + tip,9:C}");
+
+            Console.WriteLine($"The first rule of Project {project} is {rule}.");
 
             // Verbatim means in exactly same words as originally used. Meaning when you use a \ in a string you arent trying to line break etc.
             var file = "Test.cs";
