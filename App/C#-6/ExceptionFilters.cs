@@ -42,20 +42,28 @@ namespace App
             
             string[] messages = 
             {
-                "UrRRRraaaarrr",
-                "UrRRRraaaarrr mmmuururrwafsg",
-                "This won't be caught."
+                "This won't be caught by filter",
+                "Honey came in and she caught me red-handed creeping with the girl next door",
+                "This won't be caught by filter either"
             };
+
             foreach(string message in messages)
             {
                 try 
                 {
                     throw new Exception(message);
                 }
-                catch(Exception e) when (e.Message.Contains("UrRRRraaaarrr"))
+                catch(Exception e) 
+                    when (e.Message.Contains("creeping with the girl next door"))
                 {
-                    Console.WriteLine($"Caught: {e.Message}. Rope him in cowboy.");
+                    Console.WriteLine("It wasn't me.");
                 }
+                #pragma warning disable CS0168
+                catch(Exception e)
+                {
+                    Console.WriteLine($"Caught in default block.");
+                }
+                #pragma warning restore CS016
             }
         }
     }
