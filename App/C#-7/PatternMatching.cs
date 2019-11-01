@@ -23,25 +23,45 @@ namespace App
             }
         }
 
-        public static void TypePattern(Shape shape)
+        public static double TypePattern(Shape shape)
         {
             switch(shape)
             {
                 case null:
-                    throw new ArgumentNullException(nameof(shape));
+                    throw new ArgumentNullException();
                 case Rectangle rectangle:
-                    Console.WriteLine($"Input {nameof(shape)} is type Rectangle");
-                    break;
+                    return 2 * (rectangle.Height * rectangle.Width);
                 case Circle circle:
-                    Console.WriteLine($"Input {nameof(shape)} is type Circle");
-                    break;
+                    return 2 * Math.PI * circle.Radius;
                 case Triangle triangle:
-                    Console.WriteLine($"Input {nameof(shape)} is type Triangle");
-                    break;
+                    return triangle.SideA + triangle.SideB + triangle.SideC;
                 default:
-                    Console.WriteLine($"Input {nameof(shape)} is not a recognised type.");
-                    break;
+                    throw new ArgumentException("Shape was of unexpected type. Could not calculate perimeter");
             }
+        }
+
+        public static double TypePatternOld(Shape shape)
+        {
+            if(shape == null)
+        {
+            throw new ArgumentNullException();
+        }
+        Rectangle rectangle = shape as Rectangle;
+        if(rectangle != null)
+        {
+            return 2 * (rectangle.Height * rectangle.Width);
+        }
+        Circle circle = shape as Circle;
+        if(circle != null)
+        {
+            return 2 * Math.PI * circle.Radius;
+        }
+        Triangle triangle = shape as Triangle;
+        if(triangle != null)
+        {
+            return triangle.SideA + triangle.SideB + triangle.SideC;
+        }
+        throw new ArgumentException("Shape was of unexpected type. Could not calculate perimeter");
         }
 
         public static void VarPattern(Shape shape)
