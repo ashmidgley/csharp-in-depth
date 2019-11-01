@@ -54,5 +54,16 @@ namespace App
         {
             return ref p;
         }
+
+        public static void RefSort(ref int[] input)
+        {
+            Array.Sort(input);
+        }
+
+        public static int[] NormalSort(int[] input)
+        {
+            Array.Sort(input);
+            return input;
+        }
     }
 }
