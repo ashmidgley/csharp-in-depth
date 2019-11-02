@@ -65,5 +65,28 @@ namespace App
             Array.Sort(input);
             return input;
         }
+        
+        public static void ArrayHolderUsage()
+        {
+            Example example = new Example();
+            ref int elementOne = ref example[0];
+            ref int elementOneAswell = ref example[0];
+
+            elementOne = 100;
+            Console.WriteLine(elementOneAswell);
+        }
+    }
+
+    class Example
+    {
+        private int[] array = new int[10];
+
+        public ref int this[int index]
+        {
+            get 
+            {
+                return ref array[index];
+            }
+        }
     }
 }

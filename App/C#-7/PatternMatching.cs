@@ -43,43 +43,37 @@ namespace App
         public static double TypePatternOld(Shape shape)
         {
             if(shape == null)
-        {
-            throw new ArgumentNullException();
-        }
-        Rectangle rectangle = shape as Rectangle;
-        if(rectangle != null)
-        {
-            return 2 * (rectangle.Height * rectangle.Width);
-        }
-        Circle circle = shape as Circle;
-        if(circle != null)
-        {
-            return 2 * Math.PI * circle.Radius;
-        }
-        Triangle triangle = shape as Triangle;
-        if(triangle != null)
-        {
-            return triangle.SideA + triangle.SideB + triangle.SideC;
-        }
-        throw new ArgumentException("Shape was of unexpected type. Could not calculate perimeter");
+            {
+                throw new ArgumentNullException();
+            }
+            Rectangle rectangle = shape as Rectangle;
+            if(rectangle != null)
+            {
+                return 2 * (rectangle.Height * rectangle.Width);
+            }
+            Circle circle = shape as Circle;
+            if(circle != null)
+            {
+                return 2 * Math.PI * circle.Radius;
+            }
+            Triangle triangle = shape as Triangle;
+            if(triangle != null)
+            {
+                return triangle.SideA + triangle.SideB + triangle.SideC;
+            }
+            throw new ArgumentException("Shape was of unexpected type. Could not calculate perimeter");
         }
 
-        public static void VarPattern(Shape shape)
+        public static object VarPattern(string input)
         {
-            switch(shape ?? CreateSquare())
+            switch(input)
             {
-                case Rectangle rectangle:
-                    Console.WriteLine($"Input {nameof(shape)} is type Rectangle");
-                    break;
-                case Circle circle:
-                    Console.WriteLine($"Input {nameof(shape)} is type Circle");
-                    break;
-                case Triangle triangle:
-                    Console.WriteLine($"Input {nameof(shape)} is type Triangle");
-                    break;
-                case var actualShape:
-                    Console.WriteLine($"Shape type is Square");
-                    break;
+                case "hello":
+                    return input;
+                case var obj when (obj?.Trim().Length ?? 0) == 0:
+                    return null;
+                default:
+                    throw new ArgumentException("Input is invalid type.");
             }
         }
 
