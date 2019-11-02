@@ -11,38 +11,30 @@ namespace App
     {
         public static void Usage()
         {
-            (int x, string y) tuple = (x: 1, "Test");
-            Console.WriteLine(tuple.Item1);
-            Console.WriteLine(tuple.Item2);
-            tuple.x = 2;
-            tuple.y = "Updated";
-            Console.WriteLine(tuple.Item1);
-            Console.WriteLine(tuple.Item2);
-            tuple = (3, "Updated x 2");
-            Console.WriteLine(tuple.Item1);
-            Console.WriteLine(tuple.Item2);
-
-            var valid = (x: 1, "Test");
-            var validAswell = new[] { valid };
-
-            Console.WriteLine(tuple == valid);
-
-            var t1 = (1, 2);
-            var t2 = (1, 2);
-            Console.WriteLine(t1 == t2);
-
-            var tupley = new ValueTuple<int, bool>(1, true);
-            Console.WriteLine(tupley);
-            Console.WriteLine(tupley.ToString());
-
-            var tuplino = ValueTuple.Create(1, "Test");
-            Console.WriteLine(tuplino.Item1);
-            Console.WriteLine(tuplino.Item2);
+            (int a, int b) tuple = (1, 2);
+            var tupleTwo = (a: 1, b: 2);
+            var a = 1;
+            var b = 2;
+            var tupleThree = (a, b);
+            Console.WriteLine(tuple.a);
+            Console.WriteLine(tuple.b);
+            Console.WriteLine(tupleTwo.a);
+            Console.WriteLine(tupleTwo.b);
+            Console.WriteLine(tupleThree.a);
+            Console.WriteLine(tupleThree.b);
 
             // Discards _. Used for desconstruction.
             var tup = (1, 2, 3, 4);
             var (x, y, _, _) = tup;
             Console.WriteLine(tup);
+        }
+
+        public static void Equality()
+        {
+            var left = (a: 100, b: "text");
+            var right = (x: 100, y: "text");
+            Console.WriteLine(left == right);
+            Console.WriteLine(left != right);
         }
 
         public static (int min, int max) MinMax(int[] source)
